@@ -1,5 +1,5 @@
-$grey-color: #111827;
-$night-sky: #2b1055;
+@import 'styles/houses';
+@import 'styles/colors';
 
 header {
   position: absolute;
@@ -12,12 +12,11 @@ header {
   align-items: center;
   z-index: 10001;
   & .logo {
-    color: #fff;
+    color: $white;
     font-weight: 700;
     text-decoration: none;
     font-size: 2em;
     text-transform: uppercase;
-    letter-spacing: 2px;
   }
 }
 
@@ -27,11 +26,11 @@ section::before {
   bottom: 0;
   width: 100%;
   height: 100px;
-  background: linear-gradient(to top, $grey-color, transparent);
+  background: linear-gradient(to top, $grey, transparent);
   z-index: 1000;
 }
 
-section {
+.hero {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -58,7 +57,7 @@ section {
     padding: 8px 30px;
     display: inline-block;
     border-radius: 40px;
-    background: #fff;
+    background: $white;
     color: $night-sky;
     font-size: 1.5em;
     z-index: 9;
@@ -67,8 +66,76 @@ section {
   }
 }
 
-.houses {
+.explore {
+  width: 100%;
   position: relative;
-  background: $grey-color;
+  background: $grey;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  & h1 {
+    text-align: center;
+    color: $white;
+    margin-bottom: 2rem;
+  }
+  &-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    &__item {
+      display: flex;
+      align-items: center;
+      width: 50%;
+      background-color: $grey;
+      padding: 1rem;
+      border: 3px solid $gold;
+      border-radius: 25px;
+      margin-bottom: 1rem;
+      text-decoration: none;
+      &:hover {
+        cursor: pointer;
+        background-color: $night-sky;
+      }
+      & h2 {
+        color: $gold;
+        margin-left: 1rem;
+      }
+    }
+    &__img {
+      height: 64px;
+    }
+    &__group {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
+
+.splashscreen {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, $black, $grey);
+  & h1 {
+    font-size: 46px;
+    color: $white;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+}
+
+#audio-player {
+  position: fixed;
+  top: 2rem;
+  left: 4rem;
+}
+
+#playButton {
+  cursor: pointer;
 }

@@ -1,0 +1,13 @@
+@import 'colors';
+
+.houses {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background: linear-gradient(to bottom, $black, $grey);
+  height: 100vh;
+  color: $white;
+  & h1 {
+    text-align: center;
+  }
+}

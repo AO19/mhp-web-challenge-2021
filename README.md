@@ -47,4 +47,6 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## Attribution
 
-<a href='https://www.freepik.com/vectors/tree'>Tree vector created by upklyak - www.freepik.com</a>
+<a href='https://www.freepik.com/vectors/castle'>Castle vector created by upklyak - www.freepik.com</a>
+
+<div>Icons erstellt von <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/de/" title="Flaticon">www.flaticon.com</a></div>
