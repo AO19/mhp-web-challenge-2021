@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory, useParams } from 'react-router';
-import { useCharacter } from '../helpers/fetchHooks';
+import { useCharacter } from '../../helpers/fetchHooks';
 
 type ParamsType = {
   characterId: string;

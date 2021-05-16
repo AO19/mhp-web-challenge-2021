@@ -5,7 +5,7 @@ import {
   useCharacter,
   useHouse,
   useNestedCharacters,
-} from '../helpers/fetchHooks';
+} from '../../helpers/fetchHooks';
 
 type HouseParams = {
   houseId: string;

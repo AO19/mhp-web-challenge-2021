@@ -18,6 +18,16 @@ $font-family: GOT;
       list-style: none;
       padding: 1rem;
       height: 100%;
+      & .logo {
+        display: flex;
+        align-items: center;
+        & #thrones-logo {
+          height: 4vw;
+        }
+        & span {
+          font-size: 2vw;
+        }
+      }
       & .searchbox input {
         cursor: not-allowed;
         width: 30vw;

@@ -1,10 +1,9 @@
 import React from 'react';
-import GotAudio from '../GotAudio';
 
 const Header = () => {
   return (
     <header>
-      <GotAudio />
+      <h1>Inspired by #</h1>
     </header>
   );
 };

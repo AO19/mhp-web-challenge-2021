@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import getIdfromUrl from '../helpers/getIdfromUrl';
-import { Character } from '../types';
+import getIdfromUrl from '../../helpers/getIdfromUrl';
+import { Character } from '../../types';
 
 type FeedItemType = {
   info: Character;

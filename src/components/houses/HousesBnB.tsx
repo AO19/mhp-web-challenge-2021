@@ -1,9 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { allRegions } from '../helpers/allfilters';
-import { useHouses, useAllHouses } from '../helpers/fetchHooks';
-import { House } from '../types';
+import { Link } from 'react-router-dom';
+import { allRegions } from '../../helpers/allfilters';
+import { useAllHouses } from '../../helpers/fetchHooks';
+import { House } from '../../types';
 import HouseListing from './HouseListing';
+import thronIcon from '../../assets/thron.png';
 
 const { REACT_APP_API_URL } = process.env;
 
@@ -12,11 +14,9 @@ const HousesBnB = () => {
   const [isLoading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(false);
   const [page, setPage] = useState<number>(1);
-  const [pageSize, setPageSize] = useState<number>(50);
   const [region, setRegion] = useState('');
   const [hasDiedOut, setHasDiedOut] = useState(false);
   const [showAll, setShowAll] = useState(false);
-  const _ = undefined;
 
   const {
     isLoading: allLoading,
@@ -96,7 +96,7 @@ const HousesBnB = () => {
     setHasDiedOut(!hasDiedOut);
   };
 
-  const handleShowAll = (event: React.MouseEvent<HTMLSpanElement>) => {
+  const handleShowAll = () => {
     setPage(1);
     setShowAll(!showAll);
   };
@@ -114,20 +114,25 @@ const HousesBnB = () => {
     <div className='throneBnb'>
       <nav>
         <ul>
-          <li>thronebnb</li>
+          <li>
+            <Link className='logo links' to='/'>
+              <img id='thrones-logo' src={thronIcon} alt='thrones' />
+              <span>thronebnb</span>
+            </Link>
+          </li>
           <li id='search'>
             <div className='searchbox'>
               <input type='text' placeholder='Search for Thrones' disabled />
             </div>
           </li>
           <li>
-            <div className='feed__status--user'>
+            <Link to='/characters' className='feed__status--user'>
               <img
                 className='profile__img'
                 src='https://images.unsplash.com/photo-1615672969032-45c313ae0a2c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=64&h=64'
                 alt='profile pic'
               />
-            </div>
+            </Link>
           </li>
         </ul>
       </nav>

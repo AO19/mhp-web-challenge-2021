@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { fetchCharacters } from '../helpers/fetchHooks';
-import getIdfromUrl from '../helpers/getIdfromUrl';
-import { Character } from '../types';
+import { Link } from 'react-router-dom';
+import { fetchCharacters } from '../../helpers/fetchHooks';
+import getIdfromUrl from '../../helpers/getIdfromUrl';
+import { Character } from '../../types';
 import FeedItem from './FeedItem';
+import dragonLogo from '../../assets/dragonLogo.png';
 
 const Characters = () => {
   const [fetchedCharacters, setFetchedCharacters] = useState<Character[]>([]);
@@ -26,14 +28,12 @@ const Characters = () => {
   return (
     <div className='dritter-layout'>
       <nav className='dritter-layout__nav'>
-        <div>
-          <img />
-          <h4>Dritter</h4>
-        </div>
         <ul>
           <li>
-            <img />
-            <h2>Homepage</h2>
+            <Link className='links' to='/'>
+              <img />
+              <h2>Homepage</h2>
+            </Link>
           </li>
           <li>
             <img />
@@ -47,11 +47,24 @@ const Characters = () => {
             <img />
             <h2>Profile</h2>
           </li>
+          <li>
+            <Link className='links' to='/houses'>
+              <img />
+              <h2>Houses</h2>
+            </Link>
+          </li>
+          <li>
+            <Link className='links' to='/books'>
+              <img />
+              <h2>Books</h2>
+            </Link>
+          </li>
         </ul>
       </nav>
       <div className='dritter-layout__feed'>
         <div className='feed__header'>
-          <h1>Homepage</h1>
+          <img id='dritter-logo' src={dragonLogo} alt='dritter logo' />
+          <h1>Dritter</h1>
         </div>
         <div className='feed__status'>
           <div className='feed__status--user'>
@@ -87,32 +100,51 @@ const Characters = () => {
           <h4 className='trends__box-header'>Trends for you</h4>
           <div className='trends__box-item'>
             <p>Trends in The Westerlands</p>
-            <p>*doit</p>
+            <p>
+              <span className='hashtag'>#</span>WinterIsComing
+            </p>
             <p>10.100 Tweets</p>
           </div>
           <div className='trends__box-item'>
             <p>Trends in The Westerlands</p>
-            <p>*doit</p>
+            <p>
+              <span className='hashtag'>#</span>Test
+            </p>
             <p>10.100 Tweets</p>
           </div>
           <div className='trends__box-item'>
             <p>Trends in The Westerlands</p>
-            <p>*doit</p>
+            <p>
+              <span className='hashtag'>#</span>Test
+            </p>
             <p>10.100 Tweets</p>
           </div>
           <div className='trends__box-item'>
             <p>Trends in The Westerlands</p>
-            <p>*doit</p>
+            <p>
+              <span className='hashtag'>#</span>Test
+            </p>
             <p>10.100 Tweets</p>
           </div>
           <div className='trends__box-item'>
             <p>Trends in The Westerlands</p>
-            <p>*doit</p>
+            <p>
+              <span className='hashtag'>#</span>Test
+            </p>
             <p>10.100 Tweets</p>
           </div>
           <div className='trends__box-item'>
             <p>Trends in The Westerlands</p>
-            <p>*doit</p>
+            <p>
+              <span className='hashtag'>#</span>Test
+            </p>
+            <p>10.100 Tweets</p>
+          </div>
+          <div className='trends__box-item'>
+            <p>Trends in The Westerlands</p>
+            <p>
+              <span className='hashtag'>#</span>Test
+            </p>
             <p>10.100 Tweets</p>
           </div>
         </div>

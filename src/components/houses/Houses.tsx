@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { allRegions } from '../helpers/allfilters';
-import { useHouses, useAllHouses } from '../helpers/fetchHooks';
+import { allRegions } from '../../helpers/allfilters';
+import { useHouses, useAllHouses } from '../../helpers/fetchHooks';
 import HouseShield from './HouseShield';
 
 const Houses = () => {

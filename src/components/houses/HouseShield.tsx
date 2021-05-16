@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import skullIcon from '../assets/skull.png';
-import getIdfromUrl from '../helpers/getIdfromUrl';
-import { House } from '../types';
+import getIdfromUrl from '../../helpers/getIdfromUrl';
+import { House } from '../../types';
 
 type HouseType = {
   house: House;

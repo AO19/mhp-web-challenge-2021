@@ -15,13 +15,7 @@ header {
   justify-content: space-between;
   align-items: center;
   z-index: 10001;
-  & .logo {
-    color: $white;
-    font-weight: 700;
-    text-decoration: none;
-    font-size: 2em;
-    text-transform: uppercase;
-  }
+  color: $gold;
 }
 
 section::before {
@@ -135,11 +129,20 @@ section::before {
 }
 
 #audio-player {
+  z-index: 9999;
   position: fixed;
-  top: 2rem;
-  left: 4rem;
+  bottom: 2rem;
+  right: 4rem;
 }
 
 #playButton {
   cursor: pointer;
+}
+
+.links {
+  color: $white;
+  text-decoration: none;
+  &:hover {
+    color: $gold;
+  }
 }
