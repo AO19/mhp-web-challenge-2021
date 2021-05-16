@@ -5,42 +5,44 @@ $font-family: GOT;
 .throneBnb {
   background-color: $black;
   color: $white;
-  & nav {
-    height: 10vh;
-    box-shadow: 0px 2px 5px 0px rgba(253, 191, 0, 0.5);
-    & ul {
+}
+
+#throneBnb__nav {
+  background-color: $black;
+  height: 10vh;
+  border-bottom: 1px solid $gold;
+  & ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    color: $white;
+    list-style: none;
+    padding: 1rem;
+    height: 100%;
+    & .logo {
       display: flex;
-      flex-direction: row;
       align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      color: $white;
-      list-style: none;
-      padding: 1rem;
-      height: 100%;
-      & .logo {
-        display: flex;
-        align-items: center;
-        & #thrones-logo {
-          height: 4vw;
-        }
-        & span {
-          font-size: 2vw;
-        }
+      & #thrones-logo {
+        height: 4vw;
       }
-      & .searchbox input {
-        cursor: not-allowed;
-        width: 30vw;
-        height: 3vw;
-        border: 2px solid $gold;
-        border-radius: 25px;
-        background-color: $white;
-        padding: 0 5px;
-        font-family: $font-family;
-        &:focus,
-        :active {
-          border-color: $night-sky;
-        }
+      & span {
+        font-size: 2vw;
+      }
+    }
+    & .searchbox input {
+      cursor: not-allowed;
+      width: 30vw;
+      height: 3vw;
+      border: 2px solid $gold;
+      border-radius: 25px;
+      background-color: $white;
+      padding: 0 5px;
+      font-family: $font-family;
+      &:focus,
+      :active {
+        border-color: $night-sky;
       }
     }
   }

@@ -36,6 +36,25 @@ export interface Character {
   playedBy: string[];
 }
 
+export interface FullCharacter {
+  url: string;
+  name: string;
+  gender: string;
+  culture: string;
+  born: string;
+  died: string;
+  titles: string[];
+  aliases: string[];
+  father: Character;
+  mother: Character;
+  spouse: Character;
+  allegiances: string[];
+  books: string[];
+  povBooks: string[];
+  tvSeries: string[];
+  playedBy: string[];
+}
+
 export interface Book {
   url: string;
   name: string;

@@ -1,9 +1,11 @@
 @import './colors';
 
+$font-family: GOT;
+
 .character {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   color: $white;
   background-color: $black !important;
   background: url(../assets/lisbon.svg);
@@ -39,11 +41,38 @@
   justify-content: flex-start;
   background-color: $black;
   height: 5vh;
+  & button {
+    letter-spacing: 1px;
+    border: none;
+    padding: 0.5rem;
+    color: $white;
+    font-family: $font-family;
+    background-color: $night-sky;
+    cursor: pointer;
+  }
 }
 
 .info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
   width: 100%;
   text-align: left;
   font-size: 1vw;
   padding: 2vw;
+  & div {
+    padding: 1vw;
+  }
+  & p {
+    margin-bottom: 1vw;
+  }
+  &-lists {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1vw;
+    width: 100%;
+    text-align: left;
+    font-size: 1vw;
+    padding: 2vw;
+  }
 }

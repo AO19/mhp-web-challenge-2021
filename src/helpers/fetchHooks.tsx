@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { useQuery } from 'react-query';
-import { Character, House } from '../types';
+import { Book, Character, FullCharacter, House } from '../types';
 import getIdfromUrl from './getIdfromUrl';
 
 const { REACT_APP_API_URL } = process.env;
@@ -17,7 +17,7 @@ const useHouses = (
   region?: string,
   hasDiedOut?: boolean
 ) => {
-  return useQuery<HousesQueryType>('houses', async () => {
+  return useQuery<HousesQueryType>(['houses'], async () => {
     const { data, headers } = await axios.get<House[]>(
       `${REACT_APP_API_URL}/houses?page=${page}&pageSize=${pageSize}`,
       {
@@ -30,9 +30,9 @@ const useHouses = (
   });
 };
 
-const useHouse = (houseId: string) => {
+const useHouse = (houseId: string | null) => {
   return useQuery<House>(
-    'house',
+    ['house', houseId],
     async () => {
       const { data } = await axios.get<House>(
         `${REACT_APP_API_URL}/houses/${houseId}`
@@ -67,16 +67,18 @@ const useAllHouses = (showAll: boolean) => {
   );
 };
 
-const useNestedHouses = (housesArray: string[]) => {
+const useNestedHouses = (housesArray: string[] | undefined) => {
   return useQuery<House[]>(
-    'nestedHouses',
+    ['nestedHouses', housesArray],
     async () => {
       const nestedHouses: House[] = [];
-      for (const nestedHouse of housesArray) {
-        const { data } = await axios.get<House>(
-          `${REACT_APP_API_URL}/houses/${getIdfromUrl(nestedHouse)}`
-        );
-        if (data) nestedHouses.push(data);
+      if (housesArray) {
+        for (const nestedHouse of housesArray) {
+          const { data } = await axios.get<House>(
+            `${REACT_APP_API_URL}/houses/${getIdfromUrl(nestedHouse)}`
+          );
+          if (data) nestedHouses.push(data);
+        }
       }
       return nestedHouses;
     },
@@ -98,21 +100,47 @@ const fetchCharacters = async (page: number = 1, pageSize: number = 50) => {
 
 const useCharacter = (characterUrl: string | undefined) => {
   const characterId = characterUrl && getIdfromUrl(characterUrl);
-  return useQuery<Character>(
-    'character',
+  return useQuery<FullCharacter | null>(
+    ['character', characterId],
     async () => {
+      let tmpCharacter: Character | FullCharacter;
+      let fullCharacter: FullCharacter;
       const { data } = await axios.get<Character>(
         `${REACT_APP_API_URL}/characters/${characterId}`
       );
-      return data;
+      if (data) {
+        tmpCharacter = Object.assign(data);
+        if (data?.father) {
+          const father = await axios.get<Character>(
+            `${REACT_APP_API_URL}/characters/${getIdfromUrl(data?.father)}`
+          );
+          if (father?.data) tmpCharacter.father = father?.data;
+        }
+        if (data?.mother) {
+          const mother = await axios.get<Character>(
+            `${REACT_APP_API_URL}/characters/${getIdfromUrl(data?.mother)}`
+          );
+          if (mother?.data) tmpCharacter.mother = mother?.data;
+        }
+        if (data?.spouse) {
+          const spouse = await axios.get<Character>(
+            `${REACT_APP_API_URL}/characters/${getIdfromUrl(data?.spouse)}`
+          );
+          if (spouse?.data) tmpCharacter.spouse = spouse?.data;
+        }
+        fullCharacter = tmpCharacter as FullCharacter;
+        return fullCharacter;
+      } else {
+        return null;
+      }
     },
-    { enabled: !!characterUrl }
+    { enabled: !!characterUrl, retry: false }
   );
 };
 
 const useNestedCharacters = (charactersArray: string[]) => {
   return useQuery<Character[]>(
-    'nestedCharacters',
+    ['nestedCharacters', charactersArray],
     async () => {
       const nestedCharacters: Character[] = [];
       for (const nestedCharacter of charactersArray) {
@@ -127,6 +155,25 @@ const useNestedCharacters = (charactersArray: string[]) => {
   );
 };
 
+const useNestedBooks = (booksArray: string[] | undefined) => {
+  return useQuery<Book[]>(
+    ['nestedBooks', booksArray],
+    async () => {
+      const nestedBooks: Book[] = [];
+      if (booksArray) {
+        for (const nestedBook of booksArray) {
+          const { data } = await axios.get<Book>(
+            `${REACT_APP_API_URL}/books/${getIdfromUrl(nestedBook)}`
+          );
+          if (data) nestedBooks.push(data);
+        }
+      }
+      return nestedBooks;
+    },
+    { enabled: !!booksArray }
+  );
+};
+
 export {
   useHouses,
   useHouse,
@@ -135,4 +182,5 @@ export {
   fetchCharacters,
   useCharacter,
   useNestedCharacters,
+  useNestedBooks,
 };

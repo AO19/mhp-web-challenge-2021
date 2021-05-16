@@ -6,8 +6,7 @@ import CharacterDetails from './components/characters/CharacterDetails';
 import Characters from './components/characters/Characters';
 import GotAudio from './components/GotAudio';
 import Home from './components/Home';
-import HouseDetails from './components/houses/HouseDetails';
-import HousesBnB from './components/houses/HousesBnB';
+import HousesPage from './components/houses/HousesPage';
 
 function App() {
   return (
@@ -17,14 +16,11 @@ function App() {
         <Route exact path='/'>
           <Home />
         </Route>
-        <Route path='/houses/:houseId'>
-          <HouseDetails />
-        </Route>
         <Route path='/characters/:characterId'>
           <CharacterDetails />
         </Route>
         <Route path='/houses'>
-          <HousesBnB />
+          <HousesPage />
         </Route>
         <Route path='/characters'>
           <Characters />
