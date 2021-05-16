@@ -30,6 +30,12 @@ const FeedItem = ({ info }: FeedItemType) => {
         <div className='feed__list-item-content--text'>
           <p>Played by: {info?.playedBy}</p>
           <p>Born as: {info?.culture}</p>
+          <p>
+            Aliases:&nbsp;
+            {info?.aliases[0] === ''
+              ? info?.aliases?.length - 1
+              : info?.aliases?.length}
+          </p>
         </div>
       </div>
     </Link>

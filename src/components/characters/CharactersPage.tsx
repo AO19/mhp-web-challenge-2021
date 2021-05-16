@@ -101,53 +101,53 @@ const CharactersPage = () => {
         <div className='trends__box'>
           <h4 className='trends__box-header'>Trends for you</h4>
           <div className='trends__box-item'>
-            <p>Trends in The Westerlands</p>
+            <p>Trends in The North</p>
             <p>
               <span className='hashtag'>#</span>WinterIsComing
             </p>
-            <p>10.100 Tweets</p>
+            <p>33.100 Tweets</p>
           </div>
           <div className='trends__box-item'>
-            <p>Trends in The Westerlands</p>
+            <p>Trends in The North</p>
             <p>
-              <span className='hashtag'>#</span>Test
+              <span className='hashtag'>#</span>TeamStark
             </p>
-            <p>10.100 Tweets</p>
+            <p>100.000 Tweets</p>
           </div>
           <div className='trends__box-item'>
-            <p>Trends in The Westerlands</p>
+            <p>Trends in The North</p>
             <p>
-              <span className='hashtag'>#</span>Test
+              <span className='hashtag'>#</span>Northmen
             </p>
-            <p>10.100 Tweets</p>
+            <p>1.100 Tweets</p>
           </div>
           <div className='trends__box-item'>
-            <p>Trends in The Westerlands</p>
+            <p>Trends in Beyond the Wall</p>
             <p>
-              <span className='hashtag'>#</span>Test
+              <span className='hashtag'>#</span>MauerMussWeg
             </p>
-            <p>10.100 Tweets</p>
+            <p>10.100.100 Tweets</p>
           </div>
           <div className='trends__box-item'>
-            <p>Trends in The Westerlands</p>
+            <p>Trends in The Crownlands</p>
             <p>
-              <span className='hashtag'>#</span>Test
+              <span className='hashtag'>#</span>KingOfKings
             </p>
-            <p>10.100 Tweets</p>
+            <p>32.100 Tweets</p>
           </div>
           <div className='trends__box-item'>
-            <p>Trends in The Westerlands</p>
+            <p>Trends in The Neck</p>
             <p>
-              <span className='hashtag'>#</span>Test
+              <span className='hashtag'>#</span>Cold
             </p>
-            <p>10.100 Tweets</p>
+            <p>100 Tweets</p>
           </div>
           <div className='trends__box-item'>
-            <p>Trends in The Westerlands</p>
+            <p>Trends in The Riverlands</p>
             <p>
-              <span className='hashtag'>#</span>Test
+              <span className='hashtag'>#</span>TheWitcher
             </p>
-            <p>10.100 Tweets</p>
+            <p>99.100 Tweets</p>
           </div>
         </div>
       </div>

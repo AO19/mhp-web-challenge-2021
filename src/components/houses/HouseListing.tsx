@@ -23,11 +23,31 @@ const HouseListing = ({ house }: HouseType) => {
       </div>
       <div className='house-listing__content'>
         <h4>{house?.name}</h4>
+        <p>
+          Weapons:&nbsp;
+          {house?.ancestralWeapons[0] === ''
+            ? house?.ancestralWeapons?.length - 1
+            : house?.ancestralWeapons?.length}
+        </p>
+        <p>
+          Sworn Members:&nbsp;
+          {house?.swornMembers[0] === ''
+            ? house?.swornMembers?.length - 1
+            : house?.swornMembers?.length}
+        </p>
+        <p>
+          Cadet Branches:&nbsp;
+          {house?.cadetBranches[0] === ''
+            ? house?.cadetBranches?.length - 1
+            : house?.cadetBranches?.length}
+        </p>
+        <p>
+          Seats:&nbsp;
+          {house?.seats[0] === ''
+            ? house?.seats?.length - 1
+            : house?.seats?.length}
+        </p>
       </div>
-      {/* <span id='house-listing-name'>{house.name}</span>
-      {house.diedOut && (
-        <img id='house-listing-dead' src={skullIcon} alt='skull' />
-      )} */}
     </Link>
   );
 };
