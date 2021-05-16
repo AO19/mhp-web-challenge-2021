@@ -12,6 +12,11 @@ import kingIcon from '../../assets/kingIcon.png';
 import overlordIcon from '../../assets/overlordIcon.png';
 import princeIcon from '../../assets/princeIcon.png';
 import founderIcon from '../../assets/founderIcon.png';
+import swordsIcon from '../../assets/swordsIcon.png';
+import seatsIcon from '../../assets/seatsIcon.png';
+import titleIcon from '../../assets/titleIcon.png';
+import memberIcon from '../../assets/memberIcon.png';
+import cadetIcon from '../../assets/cadetIcon.png';
 
 type HouseParams = {
   houseId: string;
@@ -79,16 +84,9 @@ const HouseDetails = () => {
           <h4>
             {data?.coatOfArms ? data?.coatOfArms : 'Unknown coat of arms'}
           </h4>
-          <div className='cadets'>
-            <ul>
-              {cadetBranches?.data?.map((cadet) => (
-                <li>{cadet.name}</li>
-              ))}
-            </ul>
-          </div>
           <div className='house-details'>
             <div className='house-details__item'>
-              <img src={overlordIcon} alt='overlord' />
+              <img className='img-icon' src={overlordIcon} alt='overlord' />
               {overlord?.data ? (
                 <Link to={`/houses/${getIdfromUrl(overlord?.data?.url)}`}>
                   <span>{overlord?.data?.name}</span>
@@ -98,7 +96,7 @@ const HouseDetails = () => {
               )}
             </div>
             <div className='house-details__item'>
-              <img src={kingIcon} alt='current lord' />
+              <img className='img-icon' src={kingIcon} alt='current lord' />
               {currentLord?.data ? (
                 <Link
                   to={`/characters/${getIdfromUrl(currentLord?.data?.url)}`}
@@ -110,7 +108,7 @@ const HouseDetails = () => {
               )}
             </div>
             <div className='house-details__item'>
-              <img src={princeIcon} alt='heir' />
+              <img className='img-icon' src={princeIcon} alt='heir' />
               {heir?.data ? (
                 <Link to={`/characters/${getIdfromUrl(heir?.data?.url)}`}>
                   <span>{heir?.data?.name}</span>
@@ -120,7 +118,7 @@ const HouseDetails = () => {
               )}
             </div>
             <div className='house-details__item'>
-              <img src={founderIcon} alt='founder' />
+              <img className='img-icon' src={founderIcon} alt='founder' />
               {founder ? (
                 <Link to={`/characters/${getIdfromUrl(founder?.url)}`}>
                   <span>{founder?.name}</span>
@@ -129,16 +127,80 @@ const HouseDetails = () => {
                 <span>Founder unknown</span>
               )}
             </div>
-            {/* <div className='swornMembers'>
-              <ul>
-                <button onClick={() => swornMembers.refetch()}>Show</button>
-                Sworn Members ({data?.swornMembers.length})
-                {swornMembers.isLoading
-                  ? 'Loading'
-                  : swornMembers?.data?.map((member) => <li>{member.name}</li>)}
-              </ul>
+          </div>
+          <div className='house-lists'>
+            <div className='house-lists__item'>
+              <img className='img-icon' src={swordsIcon} alt='weapons' />
+              {data?.ancestralWeapons[0] !== '' ? (
+                <>
+                  {data?.ancestralWeapons?.map((weapon) => (
+                    <span key={weapon}>{weapon},</span>
+                  ))}
+                </>
+              ) : (
+                <span>Ancestral weapons unknown</span>
+              )}
             </div>
-            <p>{currentLord?.data?.name}</p> */}
+            <div className='house-lists__item'>
+              <img className='img-icon' src={seatsIcon} alt='seats' />
+              {data?.seats[0] !== '' ? (
+                <>
+                  {data?.seats?.map((seat) => (
+                    <span key={seat}>{seat},</span>
+                  ))}
+                </>
+              ) : (
+                <span>Seats unknown</span>
+              )}
+            </div>
+            <div className='house-lists__item'>
+              <img className='img-icon' src={titleIcon} alt='title' />
+              {data?.titles[0] !== '' ? (
+                <>
+                  {data?.titles?.map((title) => (
+                    <span key={title}>{title},</span>
+                  ))}
+                </>
+              ) : (
+                <span>Titles unknown</span>
+              )}
+            </div>
+            <div className='house-lists__item'>
+              <img className='img-icon' src={memberIcon} alt='members' />
+              {swornMembers?.data?.length !== 0 ? (
+                <div className='long-lists'>
+                  {swornMembers?.data?.map((member) => (
+                    <Link
+                      key={getIdfromUrl(member?.url)}
+                      className='long-lists__item'
+                      to={`/characters/${getIdfromUrl(member?.url)}`}
+                    >
+                      {member?.name}
+                    </Link>
+                  ))}
+                </div>
+              ) : (
+                <span>Sworn members unknown</span>
+              )}
+            </div>
+            <div className='house-lists__item'>
+              <img className='img-icon' src={cadetIcon} alt='cadet branches' />
+              {cadetBranches?.data?.length !== 0 ? (
+                <div className='long-lists'>
+                  {cadetBranches?.data?.map((cadet) => (
+                    <Link
+                      key={getIdfromUrl(cadet?.url)}
+                      className='long-lists__item'
+                      to={`/houses/${getIdfromUrl(cadet?.url)}`}
+                    >
+                      {cadet?.name}
+                    </Link>
+                  ))}
+                </div>
+              ) : (
+                <span>Cadet branches unknown</span>
+              )}
+            </div>
           </div>
         </div>
       </div>

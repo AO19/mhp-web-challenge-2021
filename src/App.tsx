@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import './App.scss';
 import CharacterDetails from './components/characters/CharacterDetails';
 import Characters from './components/characters/Characters';
+import CharactersPage from './components/characters/CharactersPage';
 import GotAudio from './components/GotAudio';
 import Home from './components/Home';
 import HousesPage from './components/houses/HousesPage';
@@ -16,14 +17,11 @@ function App() {
         <Route exact path='/'>
           <Home />
         </Route>
-        <Route path='/characters/:characterId'>
-          <CharacterDetails />
-        </Route>
         <Route path='/houses'>
           <HousesPage />
         </Route>
         <Route path='/characters'>
-          <Characters />
+          <CharactersPage />
         </Route>
       </Switch>
     </>

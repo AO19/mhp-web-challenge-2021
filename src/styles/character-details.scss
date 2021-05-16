@@ -3,33 +3,78 @@
 $font-family: GOT;
 
 .character {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  width: 100%;
   color: $white;
-  background-color: $black !important;
-  background: url(../assets/lisbon.svg);
-  background-size: cover;
-  &-profile {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    background-color: $black;
-    margin: 0 20%;
-    &__img {
-      & img {
-        height: 33vh;
-        border: 3px solid $gold;
-        border-radius: 50%;
+  &__header {
+    width: 100%;
+    & h1,
+    h2,
+    h4 {
+      text-align: center;
+      margin-bottom: 0.5vw;
+    }
+    & #profile-img-tritter {
+      width: 15vw;
+      height: 15vw;
+      border: 3px solid $gold;
+      border-radius: 50%;
+      margin: 1vw auto;
+      display: block;
+    }
+  }
+  &-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1vw;
+    padding: 1vw;
+    border-top: 1px solid $gold;
+    border-bottom: 1px solid $gold;
+    &-lists {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5vw;
+      padding: 1vw;
+      border-bottom: 1px solid $gold;
+      &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0.5vw 0;
+        & ul {
+          padding: 1vw;
+        }
+        & li {
+          font-size: 0.75vw;
+          word-break: break-word;
+        }
+        & span {
+          margin-left: 1vw;
+          margin-top: 1vw;
+        }
       }
     }
-    &__content {
-      position: relative;
-      display: grid;
-      grid-template-columns: 1fr;
-      justify-items: center;
-      width: 100%;
+    &__item {
+      & img {
+        width: 4vw;
+        height: 4vw;
+      }
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 0.5vw 0;
+      & span {
+        margin-left: 1vw;
+      }
+      & a {
+        text-decoration: none;
+        color: $white;
+        & span {
+          margin-left: 1vw;
+        }
+        &:hover {
+          color: $gold;
+        }
+      }
     }
   }
 }

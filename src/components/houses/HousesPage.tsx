@@ -10,7 +10,7 @@ const HousesPage = () => {
       <nav id='throneBnb__nav'>
         <ul>
           <li>
-            <Link className='logo links' to='/'>
+            <Link className='logo links' to='/houses'>
               <img id='thrones-logo' src={thronIcon} alt='thrones' />
               <span>thronebnb</span>
             </Link>

@@ -11,7 +11,7 @@ $font-family: GOT;
 
 .dritter-layout {
   display: grid;
-  grid-template-columns: 25% 1fr 30%;
+  grid-template-columns: 15% 55% 30%;
   grid-template-rows: 1fr;
   gap: 0px 0px;
   grid-template-areas: 'Nav Feed Trends';
@@ -48,10 +48,17 @@ $font-family: GOT;
 
 .feed {
   &__header {
-    display: flex;
-    align-items: center;
     border-bottom: $border-width $border-style $border-color;
     padding: 1rem;
+    & a {
+      color: $white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      &:hover {
+        color: red;
+      }
+    }
   }
   &__status {
     display: flex;
