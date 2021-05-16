@@ -1,0 +1,49 @@
+@import './colors';
+
+.character {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  color: $white;
+  background-color: $black !important;
+  background: url(../assets/lisbon.svg);
+  background-size: cover;
+  &-profile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: $black;
+    margin: 0 20%;
+    &__img {
+      & img {
+        height: 33vh;
+        border: 3px solid $gold;
+        border-radius: 50%;
+      }
+    }
+    &__content {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      width: 100%;
+    }
+  }
+}
+
+.back {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: $black;
+  height: 5vh;
+}
+
+.info {
+  width: 100%;
+  text-align: left;
+  font-size: 1vw;
+  padding: 2vw;
+}

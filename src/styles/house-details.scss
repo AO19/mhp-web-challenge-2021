@@ -1,0 +1,57 @@
+@import 'colors';
+
+.house {
+  background-color: $black !important;
+  color: $white;
+  font-weight: 700;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url(../assets/topography.svg);
+  &-paper {
+    position: relative;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+    border-radius: 5px;
+    min-height: 100vh;
+  }
+  &-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    &__id {
+      // font-size: 48px;
+    }
+    &__name {
+      margin-left: 1rem;
+      // font-size: 32px;
+    }
+  }
+  &-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(3px);
+    border-radius: 1rem;
+    padding: 1rem;
+    & #castle-image {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      height: 200px;
+      width: 200px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+    & h2 {
+      text-align: center;
+      width: 100%;
+      color: $gold;
+    }
+  }
+}
