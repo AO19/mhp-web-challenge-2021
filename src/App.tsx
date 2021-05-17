@@ -1,14 +1,13 @@
 import React from 'react';
 import { Switch } from 'react-router';
 import { Route } from 'react-router-dom';
-import './App.scss';
 import BooksPage from './components/books/BooksPage';
-import CharacterDetails from './components/characters/CharacterDetails';
-import Characters from './components/characters/Characters';
 import CharactersPage from './components/characters/CharactersPage';
 import GotAudio from './components/GotAudio';
 import Home from './components/Home';
 import HousesPage from './components/houses/HousesPage';
+import NotFound from './components/NotFound';
+import './App.scss';
 
 function App() {
   return (
@@ -26,6 +25,9 @@ function App() {
         </Route>
         <Route path='/books'>
           <BooksPage />
+        </Route>
+        <Route path='*'>
+          <NotFound />
         </Route>
       </Switch>
     </>
