@@ -33,31 +33,27 @@ const CharactersPage = () => {
         <ul>
           <li>
             <Link className='links' to='/'>
-              <img />
               <h2>Homepage</h2>
             </Link>
           </li>
           <li>
-            <img />
             <h2>Explore</h2>
           </li>
           <li>
-            <img />
             <h2>Messages</h2>
           </li>
           <li>
-            <img />
-            <h2>Profile</h2>
+            <Link className='links' to='/noOneAlive'>
+              <h2>Profile</h2>
+            </Link>
           </li>
           <li>
             <Link className='links' to='/houses'>
-              <img />
               <h2>Houses</h2>
             </Link>
           </li>
           <li>
             <Link className='links' to='/books'>
-              <img />
               <h2>Books</h2>
             </Link>
           </li>

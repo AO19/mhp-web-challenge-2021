@@ -32,6 +32,9 @@ $font-family: GOT;
   & ul {
     text-decoration: none;
     list-style: none;
+    & li {
+      margin: 1vw 0;
+    }
   }
 }
 
