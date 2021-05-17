@@ -1,3 +1,38 @@
+# MHP Web-App Coding Challenge
+
+This project refers to the [:man_technologist:MHP Coding Challenge](https://github.com/MHP-A-Porsche-Company/coding-challenges/tree/master/Web).  
+
+Technology-Stack:
+- [React](https://reactjs.org/)
+  - [React-Query](https://react-query.tanstack.com/)
+  - [Framer Motion](https://www.framer.com/motion/)
+
+## Live Demo
+
+The Game Of Thrones Font might not load in this version.
+
+[Demo](https://mhp-web-challenge-2021.vercel.app/)
+
+## Views
+1. Splashscreen
+2. Home
+3. Houses (Thronebnb, inspired by [Airbnb](https://www.airbnb.com/)
+4. House Details
+5. Characters (Dritter - Dragon Twitter, inspired by [Twitter](https://www.twitter.com/)
+6. Character Details
+7. Books (Inspired by GitBook)
+8. Not Found
+
+## Install
+- [Node.js](https://nodejs.org/en/) Version: 15.14.0
+- [npm](https://www.npmjs.com) Version: 7.7.6  
+
+Clone this repo and:
+
+```
+npm install
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
