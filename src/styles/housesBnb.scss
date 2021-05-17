@@ -117,6 +117,16 @@ $font-family: GOT;
     padding: 0.5vw;
     border-top: 1px solid $night-sky;
     border-bottom: 1px solid $night-sky;
+    & button {
+      letter-spacing: 1px;
+      border-radius: 25px;
+      border: none;
+      padding: 0.5rem;
+      color: $white;
+      font-family: $font-family;
+      background-color: $night-sky;
+      cursor: pointer;
+    }
   }
 }
 

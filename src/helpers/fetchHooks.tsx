@@ -155,6 +155,15 @@ const useNestedCharacters = (charactersArray: string[]) => {
   );
 };
 
+const useAllBooks = () => {
+  return useQuery<Book[]>(['allBooks'], async () => {
+    const { data } = await axios.get<Book[]>(
+      `${REACT_APP_API_URL}/books?pageSize=50`
+    );
+    return data;
+  });
+};
+
 const useNestedBooks = (booksArray: string[] | undefined) => {
   return useQuery<Book[]>(
     ['nestedBooks', booksArray],
@@ -182,5 +191,6 @@ export {
   fetchCharacters,
   useCharacter,
   useNestedCharacters,
+  useAllBooks,
   useNestedBooks,
 };

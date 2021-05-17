@@ -1,0 +1,72 @@
+@import './colors';
+
+.books {
+  color: $white;
+  display: grid;
+  grid-template-columns: 33vw 1fr;
+  background-color: $black;
+  height: 100vh;
+  overflow: hidden;
+  &__scroller {
+    border-right: 1px solid $gold;
+    &-list {
+      & h2 {
+        text-align: center;
+        padding: 1vw;
+      }
+    }
+    &-item {
+      border-bottom: 1px solid $gold;
+      padding: 0.5vw;
+      &:hover {
+        cursor: pointer;
+        background-color: $night-sky;
+      }
+    }
+  }
+  &__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &--selection {
+      height: 90%;
+      width: 80%;
+      background-color: #e5e5f7;
+      opacity: 0.8;
+      background-size: 20px 20px;
+      background-image: repeating-linear-gradient(
+        0deg,
+        #000000,
+        #000000 1px,
+        #e5e5f7 1px,
+        #e5e5f7
+      );
+      border-radius: 25px;
+      color: $black;
+      padding: 1.5vw;
+      & h2 {
+        margin: 1vw 0;
+      }
+    }
+  }
+}
+
+.active-book {
+  background-color: $gold;
+  color: $black;
+}
+
+.quick-links {
+  padding: 1vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  & a {
+    text-decoration: none;
+    color: $white;
+    &:hover {
+      color: $gold;
+    }
+  }
+}
