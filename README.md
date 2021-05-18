@@ -54,6 +54,8 @@ Audio: [GOT Intro Cover](https://www.youtube.com/watch?v=7cUELYuzRGc)
 1. Show Splashscreen only once, while navigating (cookie, localStorage, global state)
 2. Various visual bugs on n-different screen sizes (animation, responsive)
 3. Wait for render of large images or data, with better loading indicator
+4. Real unit tests with Jest and React-Testing-Library
+5. E2E tests with cypress.io
 
 ## Install
 - [Node.js](https://nodejs.org/en/) Version: 15.14.0
