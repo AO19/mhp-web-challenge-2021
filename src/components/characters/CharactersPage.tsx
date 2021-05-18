@@ -1,32 +1,9 @@
-import React, { useEffect, useState } from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
-import { fetchCharacters } from '../../helpers/fetchHooks';
-import getIdfromUrl from '../../helpers/getIdfromUrl';
-import { Character } from '../../types';
-import FeedItem from './FeedItem';
 import dragonLogo from '../../assets/dragonLogo.png';
 import Characters from './Characters';
 import CharacterDetails from './CharacterDetails';
 
 const CharactersPage = () => {
-  const [fetchedCharacters, setFetchedCharacters] = useState<Character[]>([]);
-  const [hasMore, setHasMore] = useState(false);
-  const [page, setPage] = useState<number>(1);
-  const [pageSize, setPageSize] = useState<number>(50);
-
-  useEffect(() => {
-    fetchNext();
-  }, []);
-
-  const fetchNext = async () => {
-    const res = await fetchCharacters(page, pageSize);
-    if (res) {
-      setFetchedCharacters(fetchedCharacters.concat(res?.data));
-      setHasMore(res.link);
-      setPage(page + 1);
-    }
-  };
-
   return (
     <div className='dritter-layout'>
       <nav className='dritter-layout__nav'>

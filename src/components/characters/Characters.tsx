@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { fetchCharacters } from '../../helpers/fetchHooks';
 import getIdfromUrl from '../../helpers/getIdfromUrl';
@@ -8,7 +9,7 @@ const Characters = () => {
   const [fetchedCharacters, setFetchedCharacters] = useState<Character[]>([]);
   const [hasMore, setHasMore] = useState(false);
   const [page, setPage] = useState<number>(1);
-  const [pageSize, setPageSize] = useState<number>(50);
+  const [pageSize] = useState<number>(50);
 
   useEffect(() => {
     fetchNext();

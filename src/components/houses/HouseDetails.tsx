@@ -24,7 +24,7 @@ type HouseParams = {
 
 const HouseDetails = () => {
   const { houseId } = useParams<HouseParams>();
-  const { isLoading, data } = useHouse(houseId);
+  const { data } = useHouse(houseId);
   const currentLord = useCharacter(data?.currentLord);
   const heir = useCharacter(data?.heir);
   const overlord = useHouse(getIdfromUrl(data?.overlord ?? ''));
