@@ -2,6 +2,10 @@
 
 This project refers to the [:man_technologist:MHP Coding Challenge](https://github.com/MHP-A-Porsche-Company/coding-challenges/tree/master/Web).  
 
+## Idea
+Each category in the api should have its own view/ context.
+A global/ app-wide structured navigation was not intended. 
+
 Technology-Stack:
 - [React](https://reactjs.org/)
   - [React-Query](https://react-query.tanstack.com/)
@@ -45,6 +49,11 @@ Responsive Design: Desktop-First, Mobile (partial - landscape mode)
 <div>Icons erstellt von <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/de/" title="Flaticon">www.flaticon.com</a></div>  
 
 Audio: [GOT Intro Cover](https://www.youtube.com/watch?v=7cUELYuzRGc)
+
+## Possible Improvements
+1. Show Splashscreen only once, while navigating (cookie, localStorage, global state)
+2. Various visual bugs on n-different screen sizes (animation, responsive)
+3. Wait for render of large images or data, with better loading indicator
 
 ## Install
 - [Node.js](https://nodejs.org/en/) Version: 15.14.0
