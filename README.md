@@ -42,6 +42,10 @@ Responsive Design: Desktop-First, Mobile (partial - landscape mode)
 ![Books](./src/assets/screens/Books.png)
 ![NotFound](./src/assets/screens/NotFound.png)
 
+## Alternative Houses view
+In the first design iteration, houses were shown as metal shields on an black brick wall pattern. 
+See files `Houses.tsx` and `HouseShield.tsx`.
+
 ## Attribution
 
 <a href='https://www.freepik.com/vectors/castle'>Castle vector created by upklyak - www.freepik.com</a>  
