@@ -23,6 +23,16 @@ The Game Of Thrones Font might not load in this version.
 7. Books (Inspired by GitBook)
 8. Not Found
 
+## Screenshots
+
+## Attribution
+
+<a href='https://www.freepik.com/vectors/castle'>Castle vector created by upklyak - www.freepik.com</a>  
+
+<div>Icons erstellt von <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/de/" title="Flaticon">www.flaticon.com</a></div>  
+
+Audio: [GOT Intro Cover](https://www.youtube.com/watch?v=7cUELYuzRGc)
+
 ## Install
 - [Node.js](https://nodejs.org/en/) Version: 15.14.0
 - [npm](https://www.npmjs.com) Version: 7.7.6  
@@ -79,9 +89,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-## Attribution
-
-<a href='https://www.freepik.com/vectors/castle'>Castle vector created by upklyak - www.freepik.com</a>
-
-<div>Icons erstellt von <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/de/" title="Flaticon">www.flaticon.com</a></div>
