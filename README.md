@@ -6,10 +6,14 @@ Technology-Stack:
 - [React](https://reactjs.org/)
   - [React-Query](https://react-query.tanstack.com/)
   - [Framer Motion](https://www.framer.com/motion/)
+ 
+Responsive Design: Desktop-First, Mobile (partial - landscape mode)
+
+## Developed on
+- Linux (Ubuntu)
+- 1366x768 resolution (and simulated 2K resolution)
 
 ## Live Demo
-
-The Game Of Thrones Font might not load in this version.
 
 [Demo](https://mhp-web-challenge-2021.vercel.app/)
 
@@ -24,6 +28,7 @@ The Game Of Thrones Font might not load in this version.
 8. Not Found
 
 ## Screenshots
+![Splashscreen](./assets/screens/Splashscreen.png)
 
 ## Attribution
 
