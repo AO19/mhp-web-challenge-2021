@@ -28,7 +28,15 @@ Responsive Design: Desktop-First, Mobile (partial - landscape mode)
 8. Not Found
 
 ## Screenshots
-![Splashscreen](./assets/screens/Splashscreen.png)
+![Splashscreen](./src/assets/screens/Splashscreen.png)
+![Home](./src/assets/screens/Home.png)
+![HomeMenu](./src/assets/screens/Home_Menu.png)
+![Houses](./src/assets/screens/Thronebnb.png)
+![HouseDetails](./src/assets/screens/HouseDetails.png)
+![Characters](./src/assets/screens/Dritter_Characters.png)
+![CharacterDetails](./src/assets/screens/Character_Details.png)
+![Books](./src/assets/screens/Books.png)
+![NotFound](./src/assets/screens/NotFound.png)
 
 ## Attribution
 
